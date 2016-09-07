@@ -16,3 +16,21 @@
 /Volumes/TOTEM/Temporary Folder/RunningAndJumping_KH/Temp/bin/Debug/Assembly-CSharp.dll
 /Volumes/TOTEM/Temporary Folder/RunningAndJumping_KH/obj/Debug/Assembly-CSharp.dll
 /Volumes/TOTEM/Temporary Folder/RunningAndJumping_KH/obj/Debug/Assembly-CSharp.dll.mdb
+/Users/Tyrite/Projects/Sophomore-Project-FALL-/Games/Running & Jumping/RunningAndJumping_KH/Temp/bin/Debug/Assembly-CSharp.dll.mdb
+/Users/Tyrite/Projects/Sophomore-Project-FALL-/Games/Running & Jumping/RunningAndJumping_KH/Temp/bin/Debug/Assembly-CSharp.dll
+/Users/Tyrite/Projects/Sophomore-Project-FALL-/Games/Running & Jumping/RunningAndJumping_KH/obj/Debug/Assembly-CSharp.dll
+/Users/Tyrite/Projects/Sophomore-Project-FALL-/Games/Running & Jumping/RunningAndJumping_KH/obj/Debug/Assembly-CSharp.dll.mdb
+/Users/Tyrite/Projects/Sophomore-Project-FALL-/Games/Running & Jumping/RunningAndJumping_KH/Temp/bin/Debug/UnityEngine.dll
+/Users/Tyrite/Projects/Sophomore-Project-FALL-/Games/Running & Jumping/RunningAndJumping_KH/Temp/bin/Debug/UnityEditor.dll
+/Users/Tyrite/Projects/Sophomore-Project-FALL-/Games/Running & Jumping/RunningAndJumping_KH/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/Tyrite/Projects/Sophomore-Project-FALL-/Games/Running & Jumping/RunningAndJumping_KH/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/Tyrite/Projects/Sophomore-Project-FALL-/Games/Running & Jumping/RunningAndJumping_KH/Temp/bin/Debug/UnityEngine.Analytics.dll
+/Users/Tyrite/Projects/Sophomore-Project-FALL-/Games/Running & Jumping/RunningAndJumping_KH/Temp/bin/Debug/Mono.Cecil.dll
+/Users/Tyrite/Projects/Sophomore-Project-FALL-/Games/Running & Jumping/RunningAndJumping_KH/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/Tyrite/Projects/Sophomore-Project-FALL-/Games/Running & Jumping/RunningAndJumping_KH/Temp/bin/Debug/Unity.DataContract.dll
+/Users/Tyrite/Projects/Sophomore-Project-FALL-/Games/Running & Jumping/RunningAndJumping_KH/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/Tyrite/Projects/Sophomore-Project-FALL-/Games/Running & Jumping/RunningAndJumping_KH/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/Tyrite/Projects/Sophomore-Project-FALL-/Games/Running & Jumping/RunningAndJumping_KH/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/Tyrite/Projects/Sophomore-Project-FALL-/Games/Running & Jumping/RunningAndJumping_KH/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/Tyrite/Projects/Sophomore-Project-FALL-/Games/Running & Jumping/RunningAndJumping_KH/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/Tyrite/Projects/Sophomore-Project-FALL-/Games/Running & Jumping/RunningAndJumping_KH/Temp/bin/Debug/Mono.Cecil.Mdb.dll
