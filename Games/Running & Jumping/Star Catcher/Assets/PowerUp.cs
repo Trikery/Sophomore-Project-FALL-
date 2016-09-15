@@ -7,7 +7,7 @@ public class PowerUp : MonoBehaviour {
 	public CharacterMovement accessSpeed;
 	void OnTriggerEnter (){
 		gameObject.SetActive (false);
-		accessSpeed.moveSpeed = accessSpeed.moveSpeed * 2;
+		accessSpeed.moveSpeed = accessSpeed.moveSpeed + 10;
 
 	}
 }
