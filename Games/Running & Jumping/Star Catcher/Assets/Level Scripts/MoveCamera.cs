@@ -4,11 +4,11 @@ using System.Collections;
 public class MoveCamera : MonoBehaviour {
 
 	public float speed = 1;
-	private Vector3 tempPos;
-	
-	// Update is called once per frame
+	private Vector3 tempPosX;
+	public GameObject player;
+
 	void Update () {
-		tempPos.x = speed * Time.deltaTime;
-		transform.Translate (tempPos);
+		tempPosX.x = speed * Time.deltaTime;
+		transform.Translate (tempPosX);
 	}
 }

@@ -7,12 +7,12 @@ public class CharacterMovement : MonoBehaviour {
 	private Vector3 moveVector;
 	//variables
 	public float gravity = 1f;
-	public float moveSpeed = 10f;
-	public float jumpPower = 10f;
-	public int jumpCount = 2;
+	public float moveSpeed = 5f;
+	public float jumpPower = 12f;
+	public int jumpCount = 1;
 
 	//Coroutine for sliding
-	public int slideDuration = 100;
+	public int slideDuration = 50;
 	public float slideTime = 0.01f;
 
 	IEnumerator Slide (){
@@ -20,11 +20,11 @@ public class CharacterMovement : MonoBehaviour {
 		while (slideDuration > 0) {
 			slideDuration--;
 			yield return new WaitForSeconds (slideTime);
-			moveSpeed *= 20;
+			moveSpeed = 12;
 			print ("sliding");
 		}
 		slideDuration = durationTemp;
-		moveSpeed -= 10;
+		moveSpeed = 8;
 	}
 
 	void Start (){
@@ -42,7 +42,7 @@ public class CharacterMovement : MonoBehaviour {
 				jumpCount --;
 			}
 		if (character.isGrounded)
-			jumpCount = 2;
+			jumpCount = 1;
 
 		if (character.isGrounded && Input.GetKey (KeyCode.RightArrow) && Input.GetKeyDown (KeyCode.S))
 			StartCoroutine (Slide());
