@@ -2,10 +2,10 @@
 using System.Collections;
 using System;
 
-public class Recycler : MonoBehaviour 
+public class StageRecycler : MonoBehaviour 
 {
 
-	public static Action<Recycler> RecycleAction;
+	public static Action<StageRecycler> RecycleAction;
 	public bool canBeRecycled = false;
 	public Transform cube;   
 

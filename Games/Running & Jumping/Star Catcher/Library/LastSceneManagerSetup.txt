@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Test Level/TestStage.unity
+- path: Assets/Level Scripts/RepeatingChunks.unity
   isLoaded: 1
   isActive: 1
