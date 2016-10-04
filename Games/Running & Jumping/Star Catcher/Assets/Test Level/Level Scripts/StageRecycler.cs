@@ -7,11 +7,11 @@ public class StageRecycler : MonoBehaviour
 
 	public static Action<StageRecycler> RecycleAction;
 	public bool canBeRecycled = false;
-	public Transform cube;   
+	public Transform chunk;
 
 	void Start ()
 	{
-		cube = this.GetComponent<Transform> ();
+		chunk = this.GetComponent<Transform>();
 		if (RecycleAction != null && canBeRecycled)
 		{
 			RecycleAction(this);
@@ -23,4 +23,5 @@ public class StageRecycler : MonoBehaviour
 		canBeRecycled = true;
 		Start ();
 	}
+
 }

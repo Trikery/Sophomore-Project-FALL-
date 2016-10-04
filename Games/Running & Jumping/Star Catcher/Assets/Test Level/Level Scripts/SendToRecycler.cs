@@ -6,6 +6,7 @@ using Cubes;
 namespace Cubes {
 
 	public class SendToRecycler : MonoBehaviour {
+		public bool canRecycle = true;
 
 		public static Action <SendToRecycler> SendThis;
 
