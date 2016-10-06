@@ -4,25 +4,30 @@ using System.Collections;
 public class CharacterFlipArt : MonoBehaviour {
 
 	public Transform CharacterArt;
-
 	public bool forward = true;
 
 
-	void FlipCharacter (bool _b) 
+	void FlipCharacter (KeyCode _keyCode) 
 	{
-		CharacterArt.Rotate (0, 180, 0);
-		forward = _b;
+		switch (_keyCode) 
+		{
+		case KeyCode.RightArrow:
+			if (forward) {
+				CharacterArt.Rotate (0, 180, 0);
+				forward = false;
+			}
+			break;
+		case KeyCode.LeftArrow:
+			if (!forward) {
+				CharacterArt.Rotate (0, 180, 0);
+				forward = true;
+			}
+			break;
+		}
 	}
 
-
-	void Update () {
-		if (Input.GetKeyDown(KeyCode.RightArrow) && forward)
-		{
-			FlipCharacter (false);
-		}
-		if (Input.GetKeyDown(KeyCode.LeftArrow) && !forward)
-		{
-			FlipCharacter (true);
-		}
+	void Start ()
+	{
+		UserInputs.UserInput += FlipCharacter; //    ????????
 	}
 }
