@@ -9,7 +9,7 @@ public class CharacterMovement : MonoBehaviour {
 	public float gravity = 1f;
 	public float moveSpeed = 5f;
 	public float jumpPower = 12f;
-	public static int jumpCount = 1;
+	public int jumpCount = 1;
 
 	//Coroutine for sliding
 	public int slideDuration = 50;

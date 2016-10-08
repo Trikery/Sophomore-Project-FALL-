@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MoveCamera : MonoBehaviour {
 
-	public float speed = 1;
+	public float speed = 2;
 	private Vector3 tempPosX;
 	public GameObject player;
 
