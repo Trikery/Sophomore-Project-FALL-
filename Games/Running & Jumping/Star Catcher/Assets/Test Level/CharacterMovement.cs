@@ -5,6 +5,10 @@ public class CharacterMovement : MonoBehaviour {
 	//references
 	private CharacterController character;
 	private Vector3 moveVector;
+
+	//Animation
+	public Animator animateSprite;
+
 	//variables
 	public float gravity = 1f;
 	public float moveSpeed = 5f;
@@ -33,6 +37,7 @@ public class CharacterMovement : MonoBehaviour {
 
 	void MoveHorizontal (){  //This function will allow the character to move
 		moveVector.x = (moveSpeed * Input.GetAxis ("Horizontal"));
+	//	animateSprite.Play ("RabbitRunAnimation");		//This will chanage the animation to the running sprite
 		character.Move (moveVector * Time.deltaTime);
 	}
 

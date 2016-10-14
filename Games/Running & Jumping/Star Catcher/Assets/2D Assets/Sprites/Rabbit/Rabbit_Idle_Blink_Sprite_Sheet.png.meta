@@ -1,17 +1,15 @@
 fileFormatVersion: 2
-guid: f3e67b6150feb4767b73f000126bf31c
-timeCreated: 1476381582
+guid: b416752ea1038428bbd443f86d1116b5
+timeCreated: 1476390909
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Rabbit_Short_Jump-Sprite_Sheet_0
-    21300002: Rabbit_Short_Jump-Sprite_Sheet_1
-    21300004: Rabbit_Short_Jump-Sprite_Sheet_2
-    21300006: Rabbit_Short_Jump-Sprite_Sheet_3
-    21300008: Rabbit_Short_Jump-Sprite_Sheet_4
-    21300010: Rabbit_Short_Jump-Sprite_Sheet_5
-    21300012: Rabbit_Short_Jump-Sprite_Sheet_6
-    21300014: Rabbit_Short_Jump-Sprite_Sheet_7
+    21300000: Rabbit_Idle_Blink_Sprite_Sheet_0
+    21300002: Rabbit_Idle_Blink_Sprite_Sheet_1
+    21300004: Rabbit_Idle_Blink_Sprite_Sheet_2
+    21300006: Rabbit_Idle_Blink_Sprite_Sheet_3
+    21300008: Rabbit_Idle_Blink_Sprite_Sheet_4
+    21300010: Rabbit_Idle_Blink_Sprite_Sheet_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -52,7 +50,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 255.26
+  spritePixelsToUnits: 256
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
@@ -61,104 +59,78 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rabbit_Short_Jump-Sprite_Sheet_0
+      name: Rabbit_Idle_Blink_Sprite_Sheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1105
-        height: 1024
+        x: 161
+        y: 99
+        width: 1031
+        height: 866
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Rabbit_Short_Jump-Sprite_Sheet_1
+      name: Rabbit_Idle_Blink_Sprite_Sheet_1
       rect:
         serializedVersion: 2
-        x: 1105
-        y: 0
-        width: 1105
-        height: 1024
+        x: 1430
+        y: 99
+        width: 1031
+        height: 863
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Rabbit_Short_Jump-Sprite_Sheet_2
+      name: Rabbit_Idle_Blink_Sprite_Sheet_2
       rect:
         serializedVersion: 2
-        x: 2210
-        y: 0
-        width: 1105
-        height: 1024
+        x: 2696
+        y: 99
+        width: 1030
+        height: 859
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Rabbit_Short_Jump-Sprite_Sheet_3
+      name: Rabbit_Idle_Blink_Sprite_Sheet_3
       rect:
         serializedVersion: 2
-        x: 3315
-        y: 0
-        width: 1105
-        height: 1024
+        x: 3965
+        y: 99
+        width: 1030
+        height: 863
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Rabbit_Short_Jump-Sprite_Sheet_4
+      name: Rabbit_Idle_Blink_Sprite_Sheet_4
       rect:
         serializedVersion: 2
-        x: 4420
-        y: 0
-        width: 1105
-        height: 1024
+        x: 5233
+        y: 99
+        width: 1027
+        height: 866
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Rabbit_Short_Jump-Sprite_Sheet_5
+      name: Rabbit_Idle_Blink_Sprite_Sheet_5
       rect:
         serializedVersion: 2
-        x: 5525
-        y: 0
-        width: 1105
-        height: 1024
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Rabbit_Short_Jump-Sprite_Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 6630
-        y: 0
-        width: 1105
-        height: 1024
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Rabbit_Short_Jump-Sprite_Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 7735
-        y: 0
-        width: 1105
-        height: 1024
+        x: 6407
+        y: 99
+        width: 1027
+        height: 870
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
