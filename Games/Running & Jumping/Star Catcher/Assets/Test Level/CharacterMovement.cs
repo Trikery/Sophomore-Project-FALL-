@@ -3,57 +3,48 @@ using System.Collections;
 
 public class CharacterMovement : MonoBehaviour {
 	//references
-	private CharacterController character;
-	private Vector3 moveVector;
+	private CharacterController character;  //referencing a character controller
+	private Vector3 moveVector;				//referencing vector3 component
 
 	//Animation
-	public Animator animateSprite;
+	public	Animator anim;					//referencing an Animator
 
 	//variables
-	public float gravity = 1f;
-	public float moveSpeed = 5f;
-	public float jumpPower = 12f;
-	public int jumpCount = 1;
-
-	//Coroutine for sliding
-	public int slideDuration = 50;
-	public float slideTime = 0.01f;
-
-	IEnumerator Slide (){
-		int durationTemp = slideDuration;
-		while (slideDuration > 0) {
-			slideDuration--;
-			yield return new WaitForSeconds (slideTime);
-			moveSpeed = 12;
-			print ("sliding");
-		}
-		slideDuration = durationTemp;
-		moveSpeed = 8;
-	}
+	public 	float	gravity = 1f;
+	public 	float	moveSpeed = 5f;
+	public 	float 	jumpPower = 12f;
+	public 	int 	jumpCount = 1;
 
 	void Start (){
-		character = GetComponent<CharacterController> ();  //get access to the CharacterController Component
+		character = GetComponent<CharacterController> ();  //get access to the CharacterController Component on this object
 	}
 
-	void MoveHorizontal (){  //This function will allow the character to move
-		moveVector.x = (moveSpeed * Input.GetAxis ("Horizontal"));
-	//	animateSprite.Play ("RabbitRunAnimation");		//This will chanage the animation to the running sprite
+	//movement function
+	void MoveHorizontal (){
+			moveVector.x = (moveSpeed * Input.GetAxis ("Horizontal"));
+		if (Input.GetAxis ("Horizontal") != 0) {
+			anim.SetBool ("Running", true);
+		} else {
+			anim.SetBool ("Running", false);
+		}
 		character.Move (moveVector * Time.deltaTime);
 	}
 
+
 	void Update () {
+		//jump/double jump command
 		if ((Input.GetButtonDown("Jump")) && jumpCount > 0){
+			
 				moveVector.y = jumpPower;
 				jumpCount --;
 			}
+		//double jump variable reset
 		if (character.isGrounded)
 			jumpCount = 1;
-
-		if (character.isGrounded && Input.GetKey (KeyCode.RightArrow) && Input.GetKeyDown (KeyCode.S))
-			StartCoroutine (Slide());
-			
 		
-		MoveHorizontal (); //calling movement function
+		//calling movement function
+		MoveHorizontal ();
+		//creating a gravity effect
 		moveVector.y -= gravity;  //the +- inverts the gravity allowing it to be a positive float instead
 	}
 }
