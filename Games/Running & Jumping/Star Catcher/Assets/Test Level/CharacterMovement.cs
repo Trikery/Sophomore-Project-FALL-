@@ -12,7 +12,7 @@ public class CharacterMovement : MonoBehaviour {
 	//variables
 	public 	float	gravity = 1f;
 	public 	float	moveSpeed = 5f;
-	public 	float 	jumpPower = 12f;
+	public 	float 	jumpPower = 1f;
 	public 	int 	jumpCount = 1;
 
 	void Start (){
@@ -45,6 +45,12 @@ public class CharacterMovement : MonoBehaviour {
 		//calling movement function
 		MoveHorizontal ();
 		//creating a gravity effect
-		moveVector.y -= gravity;  //the +- inverts the gravity allowing it to be a positive float instead
+		moveVector.y -= gravity*Time.deltaTime;  //the +- inverts the gravity allowing it to be a positive float instead
+
+		if (character.isGrounded) 
+		{
+			moveVector.y = 0;
+		}
+		print (character.velocity);
 	}
 }

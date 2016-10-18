@@ -28,6 +28,7 @@ public class CharacterFlipArt : MonoBehaviour {
 
 	void Start ()
 	{
+		CharacterArt = GetComponent<Transform> ();
 		UserInputs.UserInput += FlipCharacter; //    ????????
 	}
 }
