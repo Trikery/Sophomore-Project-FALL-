@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ParallaxBG : MonoBehaviour {
 
-	public float scrollSpeed = 0.03F;
+	public float scrollSpeed = 0.02f;
 	public Renderer rend;
 	void Start() {
 		rend = GetComponent<Renderer>();
