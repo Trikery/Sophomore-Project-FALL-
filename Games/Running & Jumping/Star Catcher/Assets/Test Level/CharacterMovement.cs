@@ -38,17 +38,18 @@ public class CharacterMovement : MonoBehaviour {
 				moveVector.y = jumpPower;
 				jumpCount --;
 			}
+
 		//double jump variable reset
 		if (character.isGrounded)
 			jumpCount = 1;
 		
 		//calling movement function
 		MoveHorizontal ();
+
 		//creating a gravity effect
 		moveVector.y -= gravity*Time.deltaTime;  //the +- inverts the gravity allowing it to be a positive float instead
 
-		if (character.isGrounded) 
-		{
+		if (character.isGrounded) {
 			moveVector.y = 0;
 		}
 		print (character.velocity);
