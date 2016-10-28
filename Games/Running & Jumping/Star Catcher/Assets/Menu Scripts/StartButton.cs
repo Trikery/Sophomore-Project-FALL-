@@ -11,6 +11,7 @@ public class StartButton : MonoBehaviour {
 	public Image screen;
 
 
+
 	IEnumerator FadeButton (){
 		float fadeTime = 2;
 		button.GetComponent<Image> ().CrossFadeAlpha (0f, fadeTime, false);
@@ -20,12 +21,15 @@ public class StartButton : MonoBehaviour {
 			yield return new WaitForSeconds (1);
 			fadeTime--;
 		}
+		AcivateGamePlay ();
+	}
+
+	public void AcivateGamePlay (){
 		main.character.SetActive (true);
 		main.camera.enabled = true;
 		GameStates.currentGameState = GameStates.States.Playing;
 		main.gameObject.SetActive (false);
 	}
-
 	void Start (){		//set the level inactive so that the entities don't kill the player prematurely
 		}
 

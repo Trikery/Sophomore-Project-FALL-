@@ -5,7 +5,7 @@ using System;
 public class UserInputs : MonoBehaviour {
 
 	public static Action<KeyCode> UserInput;
-	
+
 	void Update ()
 	{
 		if (Input.GetKeyDown (KeyCode.RightArrow) && UserInput != null) {

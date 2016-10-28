@@ -10,9 +10,9 @@ public class CharacterMovement : MonoBehaviour {
 	public	Animator anim;					//referencing an Animator
 
 	//variables
-	public 	float	gravity = 1f;
-	public 	float	moveSpeed = 5f;
-	public 	float 	jumpPower = 1f;
+	public 	float	gravity = 40f;
+	public 	float	moveSpeed = 10f;
+	public 	float 	jumpPower = 14f;
 	public 	int 	jumpCount = 1;
 
 	void Start (){
@@ -52,6 +52,6 @@ public class CharacterMovement : MonoBehaviour {
 		if (character.isGrounded) {
 			moveVector.y = 0;
 		}
-		print (character.velocity);
+	//	print (character.velocity);
 	}
 }

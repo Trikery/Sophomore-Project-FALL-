@@ -1,17 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class ParallaxSymbols : MonoBehaviour {
 
-	public CanvasRenderer rend;
-	public float scrollspeed = 0.1f;
+	public RawImage uvThing;
+	public float scrollSpeed = 0.02f;
 
-	void Start () {
-		rend = GetComponent<CanvasRenderer> ();
-		rend.GetMaterial ();
+	void Start() 
+	{
+		uvThing = GetComponent<RawImage> ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
+	void Update() 
+	{
+		float offset = Time.time * scrollSpeed;
+		uvThing.uvRect = new Rect (offset, 0,1,1);
 	}
 }

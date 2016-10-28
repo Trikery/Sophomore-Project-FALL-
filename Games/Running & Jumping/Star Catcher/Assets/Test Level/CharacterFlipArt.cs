@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CharacterFlipArt : MonoBehaviour {
 
-	public Transform CharacterArt;
+	public Transform RabbitArt;
 	public bool forward = true;
 
 
@@ -13,13 +13,13 @@ public class CharacterFlipArt : MonoBehaviour {
 		{
 		case KeyCode.RightArrow:
 			if (forward) {
-				CharacterArt.Rotate (0, 180, 0);
+				RabbitArt.Rotate (0, 180, 0);
 				forward = false;
 			}
 			break;
 		case KeyCode.LeftArrow:
 			if (!forward) {
-				CharacterArt.Rotate (0, 180, 0);
+				RabbitArt.Rotate (0, 180, 0);
 				forward = true;
 			}
 			break;
@@ -28,7 +28,11 @@ public class CharacterFlipArt : MonoBehaviour {
 
 	void Start ()
 	{
-		CharacterArt = GetComponent<Transform> ();
+		RabbitArt = GetComponent<Transform> ();
 		UserInputs.UserInput += FlipCharacter; //    ????????
+	}
+
+	void OnDestroy () {
+		UserInputs.UserInput -= FlipCharacter;
 	}
 }
