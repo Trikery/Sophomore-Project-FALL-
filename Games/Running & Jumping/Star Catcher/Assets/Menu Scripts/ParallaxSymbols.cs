@@ -15,5 +15,6 @@ public class ParallaxSymbols : MonoBehaviour {
 	{
 		float offset = Time.time * scrollSpeed;
 		uvThing.uvRect = new Rect (offset, 0,1,1);
+
 	}
 }

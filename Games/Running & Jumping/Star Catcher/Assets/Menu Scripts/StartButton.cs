@@ -26,7 +26,9 @@ public class StartButton : MonoBehaviour {
 
 	public void AcivateGamePlay (){
 		main.character.SetActive (true);
-		main.camera.enabled = true;
+		main.cameraMovement.enabled = true;
+		main.widgets.SetActive (true);
+		main.starSpawners.SetActive (true);
 		GameStates.currentGameState = GameStates.States.Playing;
 		main.gameObject.SetActive (false);
 	}
