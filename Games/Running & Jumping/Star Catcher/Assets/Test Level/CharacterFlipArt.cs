@@ -4,6 +4,7 @@ using System.Collections;
 public class CharacterFlipArt : MonoBehaviour {
 
 	public Transform RabbitArt;
+
 	public bool forward = true;
 
 
@@ -29,10 +30,10 @@ public class CharacterFlipArt : MonoBehaviour {
 	void Start ()
 	{
 		RabbitArt = GetComponent<Transform> ();
-		UserInputs.UserInput += FlipCharacter; //    ????????
+		UserInputs.UserInput += FlipCharacter; //    Subscribing?
 	}
 
 	void OnDestroy () {
-		UserInputs.UserInput -= FlipCharacter;
+		UserInputs.UserInput -= FlipCharacter; //  	 UnSubscribing?
 	}
 }
