@@ -13,45 +13,41 @@ public class CharacterMovement : MonoBehaviour {
 	public 	float	gravity = 40f;
 	public 	float	moveSpeed = 10f;
 	public 	float 	jumpPower = 14f;
-	public 	int 	jumpCount = 1;
+	public 	int 	jumpCount = 2;
+	public 	int 	jumpMax = 2;
 
 	void Start (){
 		character = GetComponent<CharacterController> ();  //get access to the CharacterController Component on this object
+		UserInputs.MoveInput += Move;
+		UserInputs.JumpInput += Jump;
 	}
 
-	//movement function
-	void MoveHorizontal (){
-			moveVector.x = (moveSpeed * Input.GetAxis ("Horizontal"));
-		if (Input.GetAxis ("Horizontal") != 0) {
+	//movement function as subscribed to User Input
+	void Move (float _moveInX){
+
+		moveVector.x = (moveSpeed * _moveInX);
+
+		if (_moveInX != 0) {
 			anim.SetBool ("Running", true);
 		} else {
 			anim.SetBool ("Running", false);
 		}
-		character.Move (moveVector * Time.deltaTime);
-	}
-
-
-	void Update () {
-		//jump/double jump command
-		if ((Input.GetButtonDown("Jump")) && jumpCount > 0){
 			
-				moveVector.y = jumpPower;
-				jumpCount --;
-			}
+		character.Move (moveVector * Time.deltaTime);
 
-		//double jump variable reset
-		if (character.isGrounded)
-			jumpCount = 1;
-		
-		//calling movement function
-		MoveHorizontal ();
-
-		//creating a gravity effect
-		moveVector.y -= gravity*Time.deltaTime;  //the +- inverts the gravity allowing it to be a positive float instead
+		moveVector.y -= gravity*Time.deltaTime;
 
 		if (character.isGrounded) {
 			moveVector.y = 0;
+			jumpCount = jumpMax;
 		}
-	//	print (character.velocity);
+	}
+
+	void Jump (KeyCode _keycode)
+	{
+		if (jumpCount > 0){
+			moveVector.y = jumpPower;
+			jumpCount --;
+		}
 	}
 }

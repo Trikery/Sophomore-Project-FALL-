@@ -5,6 +5,8 @@ using System;
 public class UserInputs : MonoBehaviour {
 
 	public static Action<KeyCode> UserInput;
+	public static Action<float> MoveInput;
+	public static Action<KeyCode> JumpInput;
 
 	void Update ()
 	{
@@ -16,12 +18,12 @@ public class UserInputs : MonoBehaviour {
 			UserInput (KeyCode.LeftArrow);
 		}
 
-		if (Input.GetKeyDown (KeyCode.UpArrow) && UserInput != null) {
-			UserInput (KeyCode.UpArrow);
+		if (Input.GetKeyDown (KeyCode.Space) && UserInput != null) {
+			JumpInput (KeyCode.Space);
 		}
 
-		if (Input.GetKeyDown (KeyCode.DownArrow) && UserInput != null) {
-			UserInput (KeyCode.DownArrow);
+		if (MoveInput != null){
+			MoveInput(Input.GetAxis("Horizontal"));
 		}
 	}
 }
