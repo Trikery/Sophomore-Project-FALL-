@@ -4,7 +4,7 @@ using System.Collections;
 public class StarControl : MonoBehaviour {
 
 
-	public float endTime = 1;
+	public float endTime = 2;
 
 	public float forceDuration = 0.1f;
 	private bool canAddForce = true;

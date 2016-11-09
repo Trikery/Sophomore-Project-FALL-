@@ -38,6 +38,7 @@ public class CharacterMovement : MonoBehaviour {
 		moveVector.y -= gravity*Time.deltaTime;
 
 		if (character.isGrounded) {
+			anim.SetBool ("Landing", true);
 			moveVector.y = 0;
 			jumpCount = jumpMax;
 		}
@@ -45,7 +46,15 @@ public class CharacterMovement : MonoBehaviour {
 
 	void Jump (KeyCode _keycode)
 	{
+		anim.SetBool ("Landing", false);
+		if (jumpCount == jumpMax)
+			anim.Play ("RabbitJumpPrep");
+
+
+
 		if (jumpCount > 0){
+			if (jumpCount <= jumpMax-1)
+				anim.Play ("RabbitJumping");
 			moveVector.y = jumpPower;
 			jumpCount --;
 		}

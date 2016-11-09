@@ -8,7 +8,6 @@ public class StarSpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		SendSpawner (transform);
 	}
 
 }
