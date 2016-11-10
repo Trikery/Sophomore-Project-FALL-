@@ -50,8 +50,6 @@ public class CharacterMovement : MonoBehaviour {
 		if (jumpCount == jumpMax)
 			anim.Play ("RabbitJumpPrep");
 
-
-
 		if (jumpCount > 0){
 			if (jumpCount <= jumpMax-1)
 				anim.Play ("RabbitJumping");

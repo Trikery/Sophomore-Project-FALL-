@@ -10,8 +10,8 @@ public class EnemyApproach : MonoBehaviour {
 	public CharacterFalls death;
 
 	public void GetStar(){
-		StaticPointSystem.timer++;
-		moveIcon.x -= 10f;
+		//StaticPointSystem.timer++;
+		//moveIcon.x -= 10f;
 	}
 
 	void Update ()
