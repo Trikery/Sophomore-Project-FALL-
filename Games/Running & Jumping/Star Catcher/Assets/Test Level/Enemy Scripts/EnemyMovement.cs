@@ -29,16 +29,11 @@ public class EnemyMovement : MonoBehaviour {
 		transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.transform.position.x, transform.position.y, transform.position.z),   speed*Time.deltaTime);
 			yield return new WaitForEndOfFrame ();
 			StartCoroutine (WolfMover ());
-		WolfFlipper ();
+			WolfFlipper ();
 	}
 
 	void Start()
 	{
 		StartCoroutine (WolfMover ());
 	}
-
-	public void Jump(){
-		tempPos.y = jumpPower;
-	}
-
 }

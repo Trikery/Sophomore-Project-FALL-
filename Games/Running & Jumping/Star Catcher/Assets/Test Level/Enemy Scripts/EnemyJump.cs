@@ -3,13 +3,13 @@ using System.Collections;
 
 public class EnemyJump : MonoBehaviour {
 
-	public EnemyMovement wolf;
-
-	public float jumpPower = 2;
+	public GameObject wolfParent;
+	public float jumpPower = 10;
 
 	void OnTriggerEnter()
 	{
-		wolf.Jump ();
+		wolfParent.transform.Translate (0, jumpPower, 0);
 		print ("wolf is jumping");
 	}
+
 }
