@@ -11,6 +11,7 @@ public class EnemyMovement : MonoBehaviour {
 
 	public float speed = 5;
 	public float gravity = 10;
+	public float jumpPower = 5;
 
 	void WolfFlipper (){
 		if (player.transform.position.x < wolf.transform.position.x && canFlipWolf) {
@@ -34,6 +35,10 @@ public class EnemyMovement : MonoBehaviour {
 	void Start()
 	{
 		StartCoroutine (WolfMover ());
+	}
+
+	public void Jump(){
+		tempPos.y = jumpPower;
 	}
 
 }

@@ -3,19 +3,13 @@ using System.Collections;
 
 public class EnemyJump : MonoBehaviour {
 
-	public GameObject parentWolf;
-	public Vector3 moveVector;
+	public EnemyMovement wolf;
 
-	public float jumpPower = 8;
-
-	void Start()
-	{
-		parentWolf = GetComponent<GameObject> ();
-	}
+	public float jumpPower = 2;
 
 	void OnTriggerEnter()
 	{
+		wolf.Jump ();
 		print ("wolf is jumping");
-		moveVector.y = jumpPower;
 	}
 }
