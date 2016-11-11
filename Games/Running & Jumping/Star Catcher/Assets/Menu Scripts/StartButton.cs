@@ -10,9 +10,8 @@ public class StartButton : MonoBehaviour {
 	public Text title;
 	public Image screen;
 
-
-
-	IEnumerator FadeButton (){
+	IEnumerator FadeButton ()
+	{
 		float fadeTime = 2;
 		button.GetComponent<Image> ().CrossFadeAlpha (0f, fadeTime, false);
 		title.GetComponent<Text> ().CrossFadeAlpha (0f, fadeTime, false);
