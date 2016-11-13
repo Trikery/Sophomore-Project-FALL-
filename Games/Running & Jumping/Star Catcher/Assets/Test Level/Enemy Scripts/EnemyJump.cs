@@ -7,8 +7,11 @@ public class EnemyJump : MonoBehaviour {
 	public float jumpPower = 0.1f;
 	public int maxFrameTime = 30;
 
+	bool wolfCanJump = true;
+
 	IEnumerator WolfJump()
 	{
+		wolfCanJump = false;
 		int timeInFrames = maxFrameTime;
 		while (timeInFrames > 0) {
 			wolfParent.transform.Translate (0, jumpPower, 0);
@@ -16,12 +19,15 @@ public class EnemyJump : MonoBehaviour {
 			yield return new WaitForEndOfFrame ();
 		}
 		timeInFrames = maxFrameTime;
+		wolfCanJump = true;
 	}
 
 	void OnTriggerEnter()
 	{
-		StartCoroutine (WolfJump ());
-		print ("wolf is jumping");
+		if (wolfCanJump) {
+			StartCoroutine (WolfJump ());
+			print ("wolf is jumping");
+		}
 	}
 
 }

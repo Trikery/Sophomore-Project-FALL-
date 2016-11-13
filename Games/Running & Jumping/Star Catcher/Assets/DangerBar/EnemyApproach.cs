@@ -4,15 +4,38 @@ using UnityEngine.UI;
 
 public class EnemyApproach : MonoBehaviour {
 
-	public Vector3 moveIcon;
 	public float approachSpeed = 1;
+
+	public Vector3 moveIcon;
 	public Text timerText;
-	public CharacterFalls death;
+	public EnemyEntrance enterWolf;
+	public EnemyAmbushFlash flashFunction;
+
+	public bool canSpawnWolf = true;
+	public int flashTimeLimitMax = 120;
 
 	public void GetStar(){
 		//StaticPointSystem.timer++;
 		//moveIcon.x -= 10f;
 	}
+
+	IEnumerator PlayAmbushFlash()
+	{
+		int flashTimeLimit = flashTimeLimitMax;
+		flashFunction.StartFlash ();
+		flashFunction.FlashAnimation ();
+		while (flashTimeLimit > 0) 
+		{
+			flashTimeLimit--;
+			yield return new WaitForEndOfFrame();
+		}
+		enterWolf.EnemyActivator ();
+		flashTimeLimit = flashTimeLimitMax;
+		flashFunction.EndFlash();
+
+
+	}
+
 
 	void Update ()
 	{
@@ -22,7 +45,10 @@ public class EnemyApproach : MonoBehaviour {
 			moveIcon.x = approachSpeed * Time.deltaTime;
 			transform.Translate (moveIcon);
 		} else {
-			death.DeathActivator ();
+			if (canSpawnWolf) {
+				StartCoroutine (PlayAmbushFlash ());
+				canSpawnWolf = false;
+			}
 
 		}
 

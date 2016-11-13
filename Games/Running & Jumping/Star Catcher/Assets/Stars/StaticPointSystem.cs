@@ -2,6 +2,6 @@
 
 	public static int starCount;
 	public static int distanceCount;
-	public static float timer =  60;
+	public static float timer =  20;
 
 }
