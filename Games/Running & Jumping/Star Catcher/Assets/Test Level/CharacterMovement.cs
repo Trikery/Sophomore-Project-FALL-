@@ -57,7 +57,7 @@ public class CharacterMovement : MonoBehaviour {
 			jumpCount --;
 		}
 	}
-	void OnDestroy(){
+	public void Unsubscribe(){
 		UserInputs.MoveInput -= Move;
 		UserInputs.JumpInput -= Jump;
 	}
