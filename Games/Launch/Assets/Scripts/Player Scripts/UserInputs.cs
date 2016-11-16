@@ -4,6 +4,7 @@ using System;
 
 public class UserInputs : MonoBehaviour {
 
+
 	public static Action <KeyCode> JumpButton;
 	public static Action <float> MoveWithArrows;
 

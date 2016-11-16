@@ -12,16 +12,16 @@ public class PlayerMove : MonoBehaviour {
 	public float chargeMax;
 
 	public CharacterController player;
-	public Vector3 movePlayer;
+	private Vector3 movePlayer;
 
 	void Start ()
 	{
 		player = GetComponent<CharacterController> ();
-		UserInputs.MoveWithArrows += MovePlayer;
-		UserInputs.JumpButton += JumpPlayer;
+		UserInputs.MoveWithArrows += Move;
+		UserInputs.JumpButton += Jump;
 	}
 
-	void MovePlayer (float _movex)
+	void Move (float _movex)
 	{
 		//if (!player.isGrounded) 
 
@@ -33,8 +33,9 @@ public class PlayerMove : MonoBehaviour {
 		movePlayer.y -= gravity * Time.deltaTime;
 	}
 
-	void JumpPlayer(KeyCode _keycode)
+	void Jump(KeyCode _keycode)
 	{
+		movePlayer.y = jumpPower;
 		print ("jump");
 	}
 		
