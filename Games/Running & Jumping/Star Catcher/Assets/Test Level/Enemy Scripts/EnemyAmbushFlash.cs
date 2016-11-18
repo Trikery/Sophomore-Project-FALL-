@@ -4,9 +4,6 @@ using System.Collections;
 public class EnemyAmbushFlash : MonoBehaviour
 {
 	public GameObject flashCanvas;
-	public Animator animWolf;
-	public Animator animMask;
-	public Animator animBG;
 
 	public int maxframecount = 30;
 
@@ -35,9 +32,6 @@ public class EnemyAmbushFlash : MonoBehaviour
 
 	public void FlashAnimation()
 	{
-		animMask.Play ("TextMaskAnimation");
-		animBG.Play ("AmbushBGFlashIn");
 		StartCoroutine (TimerOne ());
-		animWolf.Play ("WolfFlashAnimation");
 	}
 }
