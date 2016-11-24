@@ -25,6 +25,7 @@ public class Overloading : MonoBehaviour {
 			break;
 		case "Slow":
 			vector = new Vector3 (1, 0, 0);
+			break;
 		}
 
 	}

@@ -6,6 +6,7 @@ public class EnemyApproach : MonoBehaviour {
 
 	public float approachSpeed = 1;
 
+	public Color dangerColor;
 	public Vector3 moveIcon;
 	public Text timerText;
 	public EnemyEntrance enterWolf;
@@ -15,8 +16,7 @@ public class EnemyApproach : MonoBehaviour {
 	public int flashTimeLimitMax = 120;
 
 	public void GetStar(){
-		//StaticPointSystem.timer++;
-		//moveIcon.x -= 10f;
+		StaticPointSystem.timer++;
 	}
 
 	IEnumerator PlayAmbushFlash()
@@ -42,8 +42,15 @@ public class EnemyApproach : MonoBehaviour {
 		if (StaticPointSystem.timer > 0) {
 			timerText.text = "" + StaticPointSystem.timer.ToString ("F0");
 			StaticPointSystem.timer -= 1 * Time.deltaTime;
-			moveIcon.x = approachSpeed * Time.deltaTime;
-			transform.Translate (moveIcon);
+			if (StaticPointSystem.timer < 5) {
+				timerText.color = dangerColor;
+			}else{
+				timerText.color = new Color (1, 1, 1, 1);
+			}
+
+
+			//moveIcon.x = approachSpeed * Time.deltaTime;
+			//transform.Translate (moveIcon);
 		} else {
 			if (canSpawnWolf) {
 				StartCoroutine (PlayAmbushFlash ());
