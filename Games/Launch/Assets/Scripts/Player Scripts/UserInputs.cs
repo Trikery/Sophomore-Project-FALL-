@@ -4,18 +4,17 @@ using System;
 
 public class UserInputs : MonoBehaviour {
 
-
-	public static Action <KeyCode> JumpButton;
-	public static Action <float> MoveWithArrows;
+	public static Action<float> MoveInput;
+	public static Action<KeyCode> JumpInput;
 
 	void Update ()
 	{
-		if (MoveWithArrows != null)
-			MoveWithArrows(Input.GetAxis("Horizontal"));
+		if (Input.GetKey (KeyCode.Space) && JumpInput != null) {
+			JumpInput (KeyCode.Space);
+		}
 
-		if (Input.GetKeyDown (KeyCode.Space) && JumpButton != null) {
-			JumpButton (KeyCode.Space);
+		if (MoveInput != null){
+			MoveInput(Input.GetAxis("Horizontal"));
 		}
 	}
-
 }

@@ -2,41 +2,46 @@
 using System.Collections;
 
 public class PlayerMove : MonoBehaviour {
+	//references
+	public CharacterController character;  //referencing a character controller
+	private Vector3 moveVector;				//referencing vector3 component
 
-	public float speed = 2;
-	public float gravity = 5;
+	//variables
+	public 	float	gravity = 10f;
+	public 	float	moveSpeed = 10f;
+	public 	float 	jumpPower = 10f;
 
-	public float jumpCharge;
-	public float chargeRate;
-	public float jumpPower = 10;
-	public float chargeMax;
+	void Start (){
+		character = GetComponent<CharacterController> (); 
 
-	public CharacterController player;
-	private Vector3 movePlayer;
-
-	void Start ()
-	{
-		player = GetComponent<CharacterController> ();
-		UserInputs.MoveWithArrows += Move;
-		UserInputs.JumpButton += Jump;
+		//subscribing to the UserInputs Script for character control
+		UserInputs.MoveInput += Move;
+		UserInputs.JumpInput += Jump;
 	}
 
-	void Move (float _movex)
-	{
-		//if (!player.isGrounded) 
+	//movement function as subscribed to User Input
+	void Move (float _moveInX){
 
-		movePlayer.x = _movex * speed * Time.deltaTime;
-		movePlayer = transform.TransformDirection (movePlayer * Time.deltaTime);
-		print ("moving");
-		movePlayer.y = 0;
-		player.Move (movePlayer);
-		movePlayer.y -= gravity * Time.deltaTime;
+		moveVector.x = (moveSpeed * _moveInX);
+		character.Move (moveVector * Time.deltaTime);
+		moveVector.y -= gravity*Time.deltaTime;
+
+		if (character.isGrounded) {
+			moveVector.y = 0;
+		}
 	}
 
-	void Jump(KeyCode _keycode)
+	//jump function as subscribed to User Input
+	void Jump (KeyCode _keycode)
 	{
-		movePlayer.y = jumpPower;
-		print ("jump");
+			//moveVector.y = jumpPower;
+			print ("jump");
 	}
-		
+
+	//Public Function used to unsubscribe userInputs upon death
+	public void Unsubscribe(){
+		UserInputs.MoveInput -= Move;
+		UserInputs.JumpInput -= Jump;
+	}
 }
+	
