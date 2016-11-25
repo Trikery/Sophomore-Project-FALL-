@@ -6,7 +6,6 @@ public class EnemyApproach : MonoBehaviour {
 
 	public float approachSpeed = 1;
 
-	public Color dangerColor;
 	public Vector3 moveIcon;
 	public Text timerText;
 	public EnemyEntrance enterWolf;
@@ -43,7 +42,7 @@ public class EnemyApproach : MonoBehaviour {
 			timerText.text = "" + StaticPointSystem.timer.ToString ("F0");
 			StaticPointSystem.timer -= 1 * Time.deltaTime;
 			if (StaticPointSystem.timer < 5) {
-				timerText.color = dangerColor;
+				timerText.color = new Color (1,0,0,1);
 			}else{
 				timerText.color = new Color (1, 1, 1, 1);
 			}

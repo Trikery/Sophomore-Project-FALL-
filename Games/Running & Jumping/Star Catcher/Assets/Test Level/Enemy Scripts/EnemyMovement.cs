@@ -24,16 +24,11 @@ public class EnemyMovement : MonoBehaviour {
 		}
 	}
 
-	IEnumerator WolfMover()
+	public IEnumerator WolfMover()
 	{
 			transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.transform.position.x, transform.position.y, transform.position.z),   speed*Time.deltaTime);
 			yield return new WaitForEndOfFrame ();
 			StartCoroutine (WolfMover ());
 		//WolfFlipper ();
-	}
-
-	void Start()
-	{
-		StartCoroutine (WolfMover ());
 	}
 }
