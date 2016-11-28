@@ -8,7 +8,7 @@ public class CameraControl : MonoBehaviour {
 
 	IEnumerator CameraFollow(){
 		
-		transform.position = target.transform.position + offset;
+		transform.position = new Vector3 (0, target.transform.position.y, 0) + offset;
 		yield return null;
 		StartCoroutine (CameraFollow ());
 	}
