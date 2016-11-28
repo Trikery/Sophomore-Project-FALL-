@@ -12,6 +12,6 @@ public class StarsText : MonoBehaviour {
 	
 
 	void Update () {
-		starText.text = "Stars: " + StaticPointSystem.starCount;
+		starText.text = "STARS: " + StaticPointSystem.starCount;
 	}
 }

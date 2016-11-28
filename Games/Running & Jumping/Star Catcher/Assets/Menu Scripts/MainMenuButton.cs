@@ -3,20 +3,17 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class RestartButton : MonoBehaviour {
-
-	public StartButton Restart;
-
-	public void RestartThisGame (){
+public class MainMenuButton : MonoBehaviour {
+	
+	public void ReturnToMenu (){
 		StageRecycleVars.nextSectionPosition = 14;
 		StageRecycleVars.distance = 14;
 		StaticPointSystem.starCount = 0;
 		StaticPointSystem.timer = 90;
 		SceneManager.LoadScene ("TestStage", LoadSceneMode.Single);
-		Restart.AcivateGamePlay ();
 	}
-		
+
 	void Start () {
-	
+		
 	}
 }

@@ -5,8 +5,8 @@ public class CharacterFalls : MonoBehaviour {
 
 	public MainMenu main;
 	public GameObject character;
-	public Canvas gameOver;
-	public Canvas widgets;
+	public GameObject gameOver;
+	public GameObject widgets;
 	public Animator anim;
 	public CharacterMovement move;
 
@@ -14,14 +14,14 @@ public class CharacterFalls : MonoBehaviour {
 		int timeLimit = time;
 		while (timeLimit > 0) {
 			timeLimit--;
-			character.transform.Translate (-0.06f, 0, 0);  //this is so the player can see the rabbit dying as the smoke eats it
+			character.transform.Translate (-0.05f, 0, 0);  //this is so the player can see the rabbit dying as the smoke eats it
 			yield return new WaitForEndOfFrame ();
 		}
 		character.SetActive (false);
 		timeLimit = time;
 		main.cameraMovement.enabled = false;
-		widgets.enabled = false;
-		gameOver.enabled = true;
+		widgets.SetActive (false);
+		gameOver.SetActive (true);
 		GameStates.currentGameState = GameStates.States.RestartScreen;
 	} 
 

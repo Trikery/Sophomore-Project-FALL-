@@ -16,7 +16,7 @@ public class DistanceCounter : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		distance = (character.transform.position.x + 30);
-		distanceText.text = "Distance: " + distance.ToString("F0") ;
+		distanceText.text = "DISTANCE: " + distance.ToString("F0") ;
 
 	}
 }

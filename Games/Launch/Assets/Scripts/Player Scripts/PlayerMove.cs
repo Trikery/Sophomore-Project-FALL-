@@ -15,7 +15,7 @@ public class PlayerMove : MonoBehaviour {
 
 	public bool canJump = true;
 	public bool canCharge = true;
-	public float chargeRate = .1f;
+	public float chargeRate = 0.1f;
 
 
 	void Start (){
