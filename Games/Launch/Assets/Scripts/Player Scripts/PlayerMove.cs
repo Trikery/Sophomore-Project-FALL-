@@ -50,19 +50,19 @@ public class PlayerMove : MonoBehaviour {
 			print ("jump");
 		}
 		jumpPower = jumpPowerBase;
-		transform.localScale = new Vector3 (1, 2 / jumpPower, 1);
+		transform.localScale = new Vector3 (1, 1, 1);
 	}
 
 	void Charge (KeyCode _keycode)
 	{
 		if (canCharge) {
 			jumpPower += chargeRate * Time.deltaTime;
-			transform.localScale = new Vector3 (1, 2 / jumpPower, 1);
+			transform.localScale = new Vector3 (1 + (jumpPower / 40) , 1 - (jumpPower/40), 1);
 			print (jumpPower);
 		}
 			
 		if (jumpPower >= jumpPowerMax) {
-			transform.localScale = new Vector3 (1.5f, 2 / jumpPower, 1);
+			transform.localScale = new Vector3 (1 + (jumpPower / 40) , 1 - (jumpPower/40), 1);
 			canCharge = false;
 		}
 		
