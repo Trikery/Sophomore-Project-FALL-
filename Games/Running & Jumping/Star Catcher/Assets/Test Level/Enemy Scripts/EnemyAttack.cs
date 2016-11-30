@@ -11,13 +11,13 @@ public class EnemyAttack : MonoBehaviour {
 	public SpriteRenderer sprite;
 
 	IEnumerator flashRed(){
-		sprite.color = Color.red;
-		yield return new WaitForSeconds (1);
-		sprite.color = Color.white;
+		sprite.color = new Color (.5f, 0, 0, .5f);
+		yield return new WaitForSeconds (.25f);
+		sprite.color = new Color (1, 1, 1, 1);
 	}
 
 	IEnumerator flashGreen(){
-		sprite.color = Color.green;
+		sprite.color = new Color (.7f, 0, 0, .5f);
 		yield return new WaitForSeconds (0.25f);
 		sprite.color = Color.white;
 	}
@@ -34,7 +34,7 @@ public class EnemyAttack : MonoBehaviour {
 			}
 			invinsibilityTime--;
 			print (invinsibilityTime);
-			yield return new WaitForSeconds (1);
+			yield return new WaitForSeconds (.5f);
 		}
 		canBeDamaged = true;
 		invinsibilityTime = maxInvins;

@@ -11,7 +11,7 @@ public class RestartButton : MonoBehaviour {
 		StageRecycleVars.nextSectionPosition = 14;
 		StageRecycleVars.distance = 14;
 		StaticPointSystem.starCount = 0;
-		StaticPointSystem.timer = 90;
+		StaticPointSystem.timer = 20;
 		SceneManager.LoadScene ("TestStage", LoadSceneMode.Single);
 		Restart.AcivateGamePlay ();
 	}

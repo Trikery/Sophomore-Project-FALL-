@@ -10,6 +10,14 @@ public class CharacterFalls : MonoBehaviour {
 	public Animator anim;
 	public CharacterMovement move;
 
+	public void RestartScreen () {
+		character.SetActive (false);
+		main.cameraMovement.enabled = false;
+		widgets.SetActive (false);
+		gameOver.SetActive (true);
+		GameStates.currentGameState = GameStates.States.RestartScreen;
+	}
+
 	IEnumerator DeathTimerMain (int time){
 		int timeLimit = time;
 		while (timeLimit > 0) {
@@ -17,12 +25,8 @@ public class CharacterFalls : MonoBehaviour {
 			character.transform.Translate (-0.05f, 0, 0);  //this is so the player can see the rabbit dying as the smoke eats it
 			yield return new WaitForEndOfFrame ();
 		}
-		character.SetActive (false);
 		timeLimit = time;
-		main.cameraMovement.enabled = false;
-		widgets.SetActive (false);
-		gameOver.SetActive (true);
-		GameStates.currentGameState = GameStates.States.RestartScreen;
+		RestartScreen ();
 	} 
 
 	public void DeathActivator () {

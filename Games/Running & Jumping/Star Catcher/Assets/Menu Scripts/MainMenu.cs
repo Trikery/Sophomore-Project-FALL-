@@ -10,6 +10,8 @@ public class MainMenu : MonoBehaviour {
 	public GameObject widgets;
 	public GameObject gameOver;
 	public GameObject starSpawners;
+	public GameObject countDown;
+	public CharacterMovement controls;
 
 	int fadeCount = 1;  //I hope to add a function that will make the game fade from black and then have the button appear based on this number
 	public GameObject playButton;
@@ -35,6 +37,8 @@ public class MainMenu : MonoBehaviour {
 		cameraMovement.enabled = false;
 		widgets.SetActive (false);
 		gameOver.SetActive (false);
+		countDown.SetActive (false);
+		controls.enabled = false;
 
 		StartCoroutine (StartUpMenu ());
 	}
