@@ -13,7 +13,7 @@ public class RestartButton : MonoBehaviour {
 		StaticPointSystem.starCount = 0;
 		StaticPointSystem.timer = 20;
 		SceneManager.LoadScene ("TestStage", LoadSceneMode.Single);
-		Restart.AcivateGamePlay ();
+		Restart.ActivateCount ();
 	}
 		
 	void Start () {

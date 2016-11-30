@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour {
 	public GameObject starSpawners;
 	public GameObject countDown;
 	public CharacterMovement controls;
+	public SunRise skyTimer;
 
 	int fadeCount = 1;  //I hope to add a function that will make the game fade from black and then have the button appear based on this number
 	public GameObject playButton;
@@ -39,6 +40,7 @@ public class MainMenu : MonoBehaviour {
 		gameOver.SetActive (false);
 		countDown.SetActive (false);
 		controls.enabled = false;
+		skyTimer.enabled = false;
 
 		StartCoroutine (StartUpMenu ());
 	}

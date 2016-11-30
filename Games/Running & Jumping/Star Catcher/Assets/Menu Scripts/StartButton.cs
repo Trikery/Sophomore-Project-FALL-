@@ -12,15 +12,7 @@ public class StartButton : MonoBehaviour {
 	public Image screen;
 	public Text button1;
 	public Text button2;
-	public Animator countAnim;
-
-	IEnumerator CountDown ()
-	{
-		main.countDown.SetActive (true);
-		main.controls.enabled = false;
-		countAnim.Play ("CountDown");
-		yield return new WaitForSeconds (4);
-	}
+	public GameObject count;
 
 	IEnumerator FadeButton ()
 	{
@@ -35,19 +27,14 @@ public class StartButton : MonoBehaviour {
 			yield return new WaitForSeconds (1);
 			fadeTime--;
 		}
-		AcivateGamePlay ();
+		ActivateCount ();
 	}
 
-	public void AcivateGamePlay (){
+	public void ActivateCount (){
 		main.character.SetActive (true);
-		main.widgets.SetActive (true);
 		GameStates.currentGameState = GameStates.States.Playing;
 		main.gameObject.SetActive (false);
-		StartCoroutine (CountDown ());
-
-		main.controls.enabled = true;
-		main.starSpawners.SetActive (true);
-		main.cameraMovement.enabled = true;
+		count.SetActive (true);
 	}
 
 		public void StartThisGame (){  //button activates the gameplay
