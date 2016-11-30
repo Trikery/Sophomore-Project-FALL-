@@ -6,6 +6,7 @@ public class EnemyMovement : MonoBehaviour {
 	public GameObject target;
 	public Vector3 tempPos;
 	public Transform wolf;
+	public Animator wolfAnim;
 
 	public bool canFlipWolf = true;
 
@@ -31,4 +32,9 @@ public class EnemyMovement : MonoBehaviour {
 			StartCoroutine (WolfMover ());
 		//WolfFlipper ();
 	}
+
+	void OnCollisionEnter (){
+		wolfAnim.Play ("WolfJumpLand");
+	}
+
 }
