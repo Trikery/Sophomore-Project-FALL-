@@ -9,6 +9,7 @@ public class EnemyAttack : MonoBehaviour {
 	public GameObject player;
 	public Animator playerAnim;
 	public SpriteRenderer sprite;
+	public StarBoostText textEffect;
 
 	IEnumerator flashRed(){
 		sprite.color = new Color (.5f, 0, 0, .5f);
@@ -51,6 +52,7 @@ public class EnemyAttack : MonoBehaviour {
 			playerAnim.Play ("RabbitDamage");
 			if (StaticPointSystem.starCount >= 0) {
 				StaticPointSystem.starCount -= 5;
+				textEffect.StarBoost ("-5", Color.red);
 				if (StaticPointSystem.starCount < 0) {
 					StaticPointSystem.starCount = 0;
 				}

@@ -8,9 +8,10 @@ public class StarBoostText : MonoBehaviour {
 	public Transform starLocal;
 
 	public void StarBoost (string _s, Color _c){
-		Instantiate (starBoost, starLocal.transform.position, Quaternion.identity);
 		starBoostAnim.GetComponent<TextMesh> ().text = _s;
 		starBoostAnim.GetComponent<TextMesh> ().color = _c;
+		Instantiate (starBoost, starLocal.transform.position, Quaternion.identity);
+
 	}
 
 }
