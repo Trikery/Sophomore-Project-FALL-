@@ -12,15 +12,15 @@ public class EnemyAttack : MonoBehaviour {
 	public StarBoostText textEffect;
 
 	IEnumerator flashRed(){
-		sprite.color = new Color (.5f, 0, 0, .5f);
+		sprite.color = Color.HSVToRGB (0, .5f, .9f);
 		yield return new WaitForSeconds (.25f);
-		sprite.color = new Color (1, 1, 1, 1);
+		sprite.color = Color.HSVToRGB (0, 0, 1);
 	}
 
 	IEnumerator flashGreen(){
-		sprite.color = new Color (.7f, 0, 0, .5f);
+		sprite.color = Color.HSVToRGB (0, .3f, 1);
 		yield return new WaitForSeconds (0.25f);
-		sprite.color = Color.white;
+		sprite.color = Color.HSVToRGB (0, 0, 1);
 	}
 
 	IEnumerator DamagePlayer()
