@@ -15,6 +15,7 @@ public class StarControl : MonoBehaviour {
 	private Rigidbody rigid;
 
 	public StarBoostText textEffect;
+	public ParticleSystem particles;
 
 	void Start ()
 	{
@@ -46,6 +47,7 @@ public class StarControl : MonoBehaviour {
 	void OnCollisionEnter () 
 	{
 		canAddForce = false;
+		particles.maxParticles = 5;
 		Destroy (gameObject, endTime);  // adding a second parameter would allow for a delay on impact
 		print ("destroyed a star");
 	}
