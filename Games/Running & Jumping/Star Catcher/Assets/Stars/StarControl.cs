@@ -10,14 +10,15 @@ public class StarControl : MonoBehaviour {
 	private bool canAddForce = true;
 	private float force;
 	public float forceRange = 50;
-	//public float torqueRange = 50;
 
 	private Vector3 forceVector;
-	//private Vector3 torqueVector;
 	private Rigidbody rigid;
+
+	public StarBoostText textEffect;
 
 	void Start ()
 	{
+		textEffect = GetComponent<StarBoostText> ();
 		rigid = GetComponent<Rigidbody> ();
 		StartCoroutine (RunRandomForce ());
 	}
@@ -38,6 +39,7 @@ public class StarControl : MonoBehaviour {
 		StaticPointSystem.starCount++;
 		Destroy (this.gameObject);
 		print (StaticPointSystem.starCount);
+	 	textEffect.StarBoost ("+1", Color.white);
 
 	}
 

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 0d0a342cc5cf24fdbb9fdc78362bc51f
+timeCreated: 1480627304
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - starBoost: {fileID: 1000011221957254, guid: c8e5a7145831f449cb6605d2a9afc11c,
+      type: 2}
+  - starBoostAnim: {fileID: 102000012299900508, guid: c8e5a7145831f449cb6605d2a9afc11c,
+      type: 2}
+  - starLocal: {fileID: 4000011356931058, guid: cba4396f0889845d3a49cd1d8a726feb,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

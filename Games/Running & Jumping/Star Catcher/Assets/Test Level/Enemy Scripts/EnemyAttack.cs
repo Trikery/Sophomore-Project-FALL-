@@ -51,7 +51,11 @@ public class EnemyAttack : MonoBehaviour {
 			playerAnim.Play ("RabbitDamage");
 			if (StaticPointSystem.starCount >= 0) {
 				StaticPointSystem.starCount -= 5;
+				if (StaticPointSystem.starCount < 0) {
+					StaticPointSystem.starCount = 0;
+				}
 			}
+
 			StartCoroutine (DamagePlayer ());
 				
 		}
