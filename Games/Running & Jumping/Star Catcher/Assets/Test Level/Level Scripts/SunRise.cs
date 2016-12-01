@@ -8,6 +8,7 @@ public class SunRise : MonoBehaviour {
 	Vector3 tempVector;
 	public SpriteRenderer sky;
 	public SpriteRenderer vignette;
+	public CharacterMovement character;
 
 	public float t = 1f;
 
@@ -31,7 +32,8 @@ public class SunRise : MonoBehaviour {
 			sky.color = new Color (1f, 1f, 1f, t);
 			vignette.color = new Color (1f, 1f, 1f, t);
 			t -= 0.004f;
-		} else {  
+		} else { 
+			character.Unsubscribe ();
 			restart.RestartScreen ();
 		}
 	}
