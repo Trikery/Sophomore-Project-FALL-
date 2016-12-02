@@ -5,4 +5,6 @@
 	public static float timer =  5;
 	public static float gameTimer = 40;
 
+	public static bool canRestartGame = false;
+
 }
