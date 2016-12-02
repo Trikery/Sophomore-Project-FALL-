@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Test Level/TestStage.unity
+- path: Assets/GameOpener/OpeningLogos.unity
   isLoaded: 1
   isActive: 1

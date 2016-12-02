@@ -12,6 +12,7 @@ public class RestartButton : MonoBehaviour {
 		StageRecycleVars.distance = 14;
 		StaticPointSystem.starCount = 0;
 		StaticPointSystem.timer = 20;
+		StaticPointSystem.gameTimer = 125;
 		StaticPointSystem.canRestartGame = true;
 		SceneManager.LoadScene ("TestStage", LoadSceneMode.Single);
 		print ("restartingStage");
