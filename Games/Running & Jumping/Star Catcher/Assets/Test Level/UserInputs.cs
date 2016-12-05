@@ -19,7 +19,7 @@ public class UserInputs : MonoBehaviour {
 			UserInput (KeyCode.LeftArrow);
 		}
 
-		if (Input.GetKeyDown (KeyCode.Space) && UserInput != null) {
+		if (Input.GetKeyDown (KeyCode.Space) && JumpInput != null) {
 			JumpInput (KeyCode.Space);
 		}
 

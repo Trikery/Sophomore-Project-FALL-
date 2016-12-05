@@ -25,7 +25,7 @@ public class EnemyJump : MonoBehaviour {
 		wolfCanJump = true;
 	}
 
-	void OnTriggerEnter()
+	void OnTriggerStay()
 	{
 		if (wolfCanJump) {
 			StartCoroutine (WolfJump ());
