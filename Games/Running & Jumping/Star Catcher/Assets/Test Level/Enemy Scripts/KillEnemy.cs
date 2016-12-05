@@ -8,7 +8,7 @@ public class KillEnemy : MonoBehaviour {
 
 	void ResetTimer()
 	{
-		StaticPointSystem.timer = 20;
+		StaticPointSystem.timer = StaticPointSystem.maxtimer;
 	}
 
 	void OnTriggerEnter()

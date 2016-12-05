@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Tumbleweed : MonoBehaviour {
+public class TumbleweedSpawner : MonoBehaviour {
 
 	public int timeMin = 5;
 	public int timeMax = 8;

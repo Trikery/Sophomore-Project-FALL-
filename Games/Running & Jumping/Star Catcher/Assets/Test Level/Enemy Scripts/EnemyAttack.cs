@@ -4,6 +4,7 @@ using System.Collections;
 public class EnemyAttack : MonoBehaviour {
 	
 	public bool canBeDamaged = true;
+	public int damage = 5;
 	public int maxInvins = 5;
 
 	public GameObject player;
@@ -51,8 +52,8 @@ public class EnemyAttack : MonoBehaviour {
 			print("Rabbit Damage");
 			playerAnim.Play ("RabbitDamage");
 			if (StaticPointSystem.starCount >= 0) {
-				StaticPointSystem.starCount -= 5;
-				textEffect.StarBoost ("-5", Color.red);
+				StaticPointSystem.starCount -= damage;
+				textEffect.StarBoost ("-" + damage, Color.red);
 				if (StaticPointSystem.starCount < 0) {
 					StaticPointSystem.starCount = 0;
 				}
