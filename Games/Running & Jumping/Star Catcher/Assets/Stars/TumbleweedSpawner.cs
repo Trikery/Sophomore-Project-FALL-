@@ -19,12 +19,13 @@ public class TumbleweedSpawner : MonoBehaviour {
 
 	IEnumerator WaitForTumble()
 	{
-		while (canSpawnTumbleweed){
-			int randomTime = Random.Range(5, 8); 
-			yield return new WaitForSeconds (randomTime);
-			Instantiate (tumbleweed, spawnPoint.position, Quaternion.identity);
-			StartCoroutine(WaitForTumble ());
+		int randomTime = Random.Range(timeMin, timeMax); 
+		Instantiate (tumbleweed, spawnPoint.position, Quaternion.identity);
+		while (randomTime > 0) {
+			randomTime--;
+			yield return new WaitForSeconds (1);
 		}
+		StartCoroutine(WaitForTumble ());
 	}
 
 }

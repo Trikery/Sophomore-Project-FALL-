@@ -39,7 +39,7 @@ public class StarControl : MonoBehaviour {
 	void OnTriggerEnter(){
 		StaticPointSystem.starCount++;
 		Destroy (this.gameObject);
-		print (StaticPointSystem.starCount);
+		//print (StaticPointSystem.starCount);
 	 	textEffect.StarBoost ("+1", Color.white);
 
 	}
@@ -49,6 +49,6 @@ public class StarControl : MonoBehaviour {
 		canAddForce = false;
 		particles.maxParticles = 5;
 		Destroy (gameObject, endTime);  // adding a second parameter would allow for a delay on impact
-		print ("destroyed a star");
+		//print ("destroyed a star");
 	}
 }
