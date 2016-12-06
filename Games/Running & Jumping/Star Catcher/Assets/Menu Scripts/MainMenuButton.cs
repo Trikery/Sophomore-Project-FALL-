@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuButton : MonoBehaviour {
 	
 	public void ReturnToMenu (){
-		StageRecycleVars.nextSectionPosition = 14;
+		StageRecycleVars.nextSectionPosition = 28;
 		StageRecycleVars.distance = 14;
 		StaticPointSystem.gameTimer = 125;
 		StaticPointSystem.starCount = 0;

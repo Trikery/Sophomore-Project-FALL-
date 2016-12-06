@@ -8,7 +8,7 @@ public class RestartButton : MonoBehaviour {
 	public StartButton Restart;
 
 	public void RestartThisGame (){
-		StageRecycleVars.nextSectionPosition = 14;
+		StageRecycleVars.nextSectionPosition = 28;
 		StageRecycleVars.distance = 14;
 		StaticPointSystem.starCount = 0;
 		StaticPointSystem.timer = 20;

@@ -32,5 +32,11 @@ public class EnemyJump : MonoBehaviour {
 			print ("wolf is jumping");
 		}
 	}
-
+	void OnTriggerEnter()
+	{
+		if (wolfCanJump) {
+			StartCoroutine (WolfJump ());
+			print ("wolf is jumping");
+		}
+	}
 }
