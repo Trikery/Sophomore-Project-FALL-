@@ -11,13 +11,13 @@ public class EnemyEntrance : MonoBehaviour {
 		enemy.SetActive (true);
 		print ("enemy is alive");
 		enemy.transform.position = enemyStartPosition.transform.position;
-		cameraSpeedChange.speed = 4.5f;
+		cameraSpeedChange.speed = 6f;
 		StartCoroutine (moveableEnemy.WolfMover ());
 	}	
 
 	public void EnemyDestroy(){
 		print ("Enemy was killed");
-		cameraSpeedChange.speed = 3.5f;
+		cameraSpeedChange.speed = 5f;
 		enemy.SetActive (false);
 		
 	}
