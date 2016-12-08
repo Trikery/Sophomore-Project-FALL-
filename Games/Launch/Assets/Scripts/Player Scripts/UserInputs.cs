@@ -8,6 +8,8 @@ public class UserInputs : MonoBehaviour {
 	public static Action<KeyCode> JumpInput;
 	public static Action<KeyCode> ChargeInput;
 
+	public static Action MoneyText;
+
 	void Update ()
 	{
 		if (Input.GetKey (KeyCode.Space) && ChargeInput != null) {
@@ -20,6 +22,9 @@ public class UserInputs : MonoBehaviour {
 
 		if (MoveInput != null){
 			MoveInput(Input.GetAxis("Horizontal"));
+
+			MoneyText ();
+
 		}
 	}
 }

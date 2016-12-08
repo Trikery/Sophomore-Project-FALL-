@@ -47,7 +47,7 @@ public class PlayerMove : MonoBehaviour {
 			canJump = false;
 			canCharge = true;
 			moveVector.y = jumpPower;
-			print ("jump");
+			//print ("jump");
 		}
 		jumpPower = jumpPowerBase;
 		transform.localScale = new Vector3 (1, 1, 1);
@@ -58,7 +58,7 @@ public class PlayerMove : MonoBehaviour {
 		if (canCharge) {
 			jumpPower += chargeRate * Time.deltaTime;
 			transform.localScale = new Vector3 (1 + (jumpPower / 40) , 1 - (jumpPower/40), 1);
-			print (jumpPower);
+			//print (jumpPower);
 		}
 			
 		if (jumpPower >= jumpPowerMax) {

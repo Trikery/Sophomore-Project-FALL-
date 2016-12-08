@@ -1,5 +1,5 @@
 ﻿public class StaticVariables{
 
-	public static int totalCoins = 0;
+	public static float totalCoins = 0f;
 
 }
