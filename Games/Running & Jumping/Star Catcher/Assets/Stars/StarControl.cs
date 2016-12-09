@@ -17,6 +17,9 @@ public class StarControl : MonoBehaviour {
 	public StarBoostText textEffect;
 	public ParticleSystem particles;
 
+	public AudioClip audioStart;
+	public AudioClip audioCollide;
+
 	void Start ()
 	{
 		textEffect = GetComponent<StarBoostText> ();
@@ -46,6 +49,7 @@ public class StarControl : MonoBehaviour {
 
 	void OnCollisionEnter () 
 	{
+		
 		canAddForce = false;
 		particles.maxParticles = 5;
 		Destroy (gameObject, endTime);  // adding a second parameter would allow for a delay on impact

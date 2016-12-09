@@ -13,7 +13,6 @@ public class Dollar : Coin {
 	protected override void OnTriggerEnter(){
 		
 		list.CollectedCoins.Add (this.gameObject);
-		thisCoin.SetActive (false);
 		StaticVariables.totalCoins += getValue ();
 
 		foreach (GameObject coin in list.CollectedCoins) {
