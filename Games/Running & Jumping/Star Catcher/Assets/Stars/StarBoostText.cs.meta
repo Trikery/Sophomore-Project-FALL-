@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 0d0a342cc5cf24fdbb9fdc78362bc51f
-timeCreated: 1480627304
+timeCreated: 1481260859
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
@@ -11,6 +11,8 @@ MonoImporter:
       type: 2}
   - starLocal: {fileID: 4000011356931058, guid: cba4396f0889845d3a49cd1d8a726feb,
       type: 2}
+  - source: {instanceID: 0}
+  - collect: {fileID: 8300000, guid: 66be47a5b1f7247bb802f6cabc957135, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

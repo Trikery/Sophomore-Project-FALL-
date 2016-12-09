@@ -19,12 +19,17 @@ public class StarControl : MonoBehaviour {
 
 	public AudioClip audioStart;
 	public AudioClip audioCollide;
+	public AudioClip audioCollect;
+
+	public AudioSource sound;
 
 	void Start ()
 	{
 		textEffect = GetComponent<StarBoostText> ();
 		rigid = GetComponent<Rigidbody> ();
 		StartCoroutine (RunRandomForce ());
+		sound.clip = audioStart;
+		sound.PlayOneShot(audioStart);
 	}
 
 	IEnumerator RunRandomForce()
@@ -49,7 +54,9 @@ public class StarControl : MonoBehaviour {
 
 	void OnCollisionEnter () 
 	{
-		
+		sound.clip = audioCollide;
+		sound.PlayOneShot(audioCollide);
+
 		canAddForce = false;
 		particles.maxParticles = 5;
 		Destroy (gameObject, endTime);  // adding a second parameter would allow for a delay on impact

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public class CharacterFalls : MonoBehaviour {
 
@@ -10,12 +11,16 @@ public class CharacterFalls : MonoBehaviour {
 	public Animator anim;
 	public CharacterMovement move;
 
+//	public EventSystem buttonSystem;
+//	public GameObject restartButton;
+
 	public void RestartScreen () {
 		character.SetActive (false);
 		main.cameraMovement.enabled = false;
 		widgets.SetActive (false);
 		gameOver.SetActive (true);
 		GameStates.currentGameState = GameStates.States.RestartScreen;
+//		buttonSystem.firstSelectedGameObject = restartButton;
 	}
 
 	IEnumerator DeathTimerMain (int time){

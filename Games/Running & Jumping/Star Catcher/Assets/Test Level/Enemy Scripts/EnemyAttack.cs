@@ -40,7 +40,7 @@ public class EnemyAttack : MonoBehaviour {
 		}
 		canBeDamaged = true;
 		invinsibilityTime = maxInvins;
-		print ("Rabbit can be damaged");
+		//print ("Rabbit can be damaged");
 	}
 
 	void OnTriggerEnter(){
@@ -49,7 +49,7 @@ public class EnemyAttack : MonoBehaviour {
 				print ("you're Dead!");
 			}
 
-			print("Rabbit Damage");
+			//print("Rabbit Damage");
 			playerAnim.Play ("RabbitDamage");
 			if (StaticPointSystem.starCount >= 0) {
 				StaticPointSystem.starCount -= damage;
