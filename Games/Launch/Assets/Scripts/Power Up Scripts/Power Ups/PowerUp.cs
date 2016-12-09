@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PowerUp : MonoBehaviour {
+public class PowerUp : MonoBehaviour{
 
 	public GameObject thisPowerUp;
 	public PowerUpList list;
