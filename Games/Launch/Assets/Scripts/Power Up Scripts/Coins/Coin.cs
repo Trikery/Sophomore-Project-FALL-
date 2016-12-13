@@ -13,13 +13,13 @@ public class Coin : MonoBehaviour {
 		list = GetComponentInParent<CoinsList> ();
 	}
 
-	protected IEnumerator Spin(){
+	protected IEnumerator Spin(){					//Coroutine #4
 		transform.Rotate (0, 0, rotateSpeed);
 		yield return null;
 		StartCoroutine (Spin ());
 	}
 
-	protected virtual int getValue (){
+	protected virtual int getValue (){				//Function that Returns a Value (this is overrided several times)
 		return 0;
 	}
 

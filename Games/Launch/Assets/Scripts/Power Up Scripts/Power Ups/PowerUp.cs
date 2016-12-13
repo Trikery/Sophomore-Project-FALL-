@@ -17,7 +17,7 @@ public class PowerUp : MonoBehaviour{
 		print ("Whats The Power?");
 	}
 
-	protected IEnumerator Spin(){
+	protected IEnumerator Spin(){												//Couroutine #6
 		transform.Rotate (rotateSpeed, -rotateSpeed, rotateSpeed);
 		yield return null;
 		StartCoroutine (Spin ());

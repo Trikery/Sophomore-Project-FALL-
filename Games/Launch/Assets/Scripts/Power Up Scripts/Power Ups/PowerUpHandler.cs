@@ -4,7 +4,7 @@ using System.Collections;
 public class PowerUpHandler : MonoBehaviour {
 
 	public void OnTriggerEnter(Collider other){
-		switch (other.gameObject.layer) {
+		switch (other.gameObject.layer) {							//Switch Statement #1
 		case 17:
 			print ("Got an Empty Pill");
 			break;

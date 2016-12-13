@@ -31,10 +31,10 @@ public class GameStateController : MonoBehaviour {
 		movement = movementNoStatic;
 	}
 
-	public static void ChangeState (GameStates.States state){
+	public static void ChangeState (GameStates.States state){				//Use of a Static Function (called in TitleScreen.cs)
 		GameStates.currentState = state;
 
-		switch (GameStates.currentState) {
+		switch (GameStates.currentState) {									//Switch Statement #2
 		case GameStates.States.OpenMenu:
 			print ("Opening Menu");
 //			player.SetActive (true);

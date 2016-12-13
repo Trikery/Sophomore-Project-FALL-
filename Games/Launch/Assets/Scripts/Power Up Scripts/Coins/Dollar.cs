@@ -10,11 +10,11 @@ public class Dollar : Coin {
 		return 100;
 	}
 
-	IEnumerator winTimer(){
+	IEnumerator winTimer(){												//Coroutine #5
 		int maxTimer = 2;
 		int timer = maxTimer;
 		player.SetActive (false);
-		while (timer > 0) {
+		while (timer > 0) {												//While Loop #2
 			yield return new WaitForSeconds (1);
 			timer--;
 		}
@@ -36,11 +36,11 @@ public class Dollar : Coin {
 
 		StartCoroutine (winTimer ());
 
-		foreach (GameObject coin in list.CollectedCoins) {
+		foreach (GameObject coin in list.CollectedCoins) {				//ForEach Loop #1
 			coin.SetActive (true);
 		}
 
-		foreach (GameObject pUp in plist.CollectedPowerUps) {
+		foreach (GameObject pUp in plist.CollectedPowerUps) {			//ForEach Loop #2
 			pUp.SetActive (true);
 		}
 	}

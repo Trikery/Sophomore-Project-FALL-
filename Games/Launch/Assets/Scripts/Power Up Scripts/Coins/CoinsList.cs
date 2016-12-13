@@ -3,6 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class CoinsList : MonoBehaviour {
-	public List<GameObject> CollectedCoins;
+	public List<GameObject> CollectedCoins;				//List #1
 
 }

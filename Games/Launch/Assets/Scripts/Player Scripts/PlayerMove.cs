@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerMove : MonoBehaviour, IMovement, IJump {
+public class PlayerMove : MonoBehaviour, IMovement, IJump {								//Use of Interface #1 & #2
 	//references
 	public CharacterController character;  //referencing a character controller
 	private Vector3 moveVector;				//referencing vector3 component
