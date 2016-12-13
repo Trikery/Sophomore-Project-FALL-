@@ -10,10 +10,31 @@ public class Dollar : Coin {
 		return 100;
 	}
 
+	IEnumerator winTimer(){
+		int maxTimer = 2;
+		int timer = maxTimer;
+		player.SetActive (false);
+		while (timer > 0) {
+			yield return new WaitForSeconds (1);
+			timer--;
+		}
+		timer = maxTimer;
+		LevelReset ();
+	}
+
+	void LevelReset(){
+		plist.CollectedPowerUps.Clear ();
+		list.CollectedCoins.Clear ();
+		player.transform.position = new Vector3 (0, 0.5f, 0);
+		player.SetActive (true);
+	}
+
 	protected override void OnTriggerEnter(){
 		
 		list.CollectedCoins.Add (this.gameObject);
 		StaticVariables.totalCoins += getValue ();
+
+		StartCoroutine (winTimer ());
 
 		foreach (GameObject coin in list.CollectedCoins) {
 			coin.SetActive (true);
@@ -22,11 +43,6 @@ public class Dollar : Coin {
 		foreach (GameObject pUp in plist.CollectedPowerUps) {
 			pUp.SetActive (true);
 		}
-
-		plist.CollectedPowerUps.Clear ();
-		list.CollectedCoins.Clear ();
-		player.transform.position = new Vector3 (0, 0.5f, 0);
-
 	}
 }
 

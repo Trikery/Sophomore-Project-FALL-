@@ -2,6 +2,7 @@
 using System.Collections;
 
 public interface IPowerUpParent {
-	void OnEnable ();
+	IEnumerator Spin (); 
+	//void OnTriggerEnter ();
 
 }

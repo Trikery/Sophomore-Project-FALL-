@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerMove : MonoBehaviour {
+public class PlayerMove : MonoBehaviour, IMovement, IJump {
 	//references
 	public CharacterController character;  //referencing a character controller
 	private Vector3 moveVector;				//referencing vector3 component
@@ -18,17 +18,15 @@ public class PlayerMove : MonoBehaviour {
 	public float chargeRate = 0.1f;
 
 
-	void Start (){
-		character = GetComponent<CharacterController> (); 
+	public void Start (){
+		character = GetComponent<CharacterController> ();
+		Subscribe ();
 
 		//subscribing to the UserInputs Script for character control
-		UserInputs.MoveInput += Move;
-		UserInputs.JumpInput += Jump;
-		UserInputs.ChargeInput += Charge;
 	}
 
 	//movement function as subscribed to User Input
-	void Move (float _moveInX){
+	public void Move (float _moveInX){
 
 		moveVector.x = (moveSpeed * _moveInX);
 		character.Move (moveVector * Time.deltaTime);
@@ -41,7 +39,7 @@ public class PlayerMove : MonoBehaviour {
 	}
 
 	//jump function as subscribed to User Input
-	void Jump (KeyCode _keycode)
+	public void Jump (KeyCode _keycode)
 	{
 		if (canJump) {
 			canJump = false;
@@ -53,7 +51,7 @@ public class PlayerMove : MonoBehaviour {
 		transform.localScale = new Vector3 (1, 1, 1);
 	}
 
-	void Charge (KeyCode _keycode)
+	public void Charge (KeyCode _keycode)
 	{
 		if (canCharge) {
 			jumpPower += chargeRate * Time.deltaTime;
@@ -72,6 +70,13 @@ public class PlayerMove : MonoBehaviour {
 	public void Unsubscribe(){
 		UserInputs.MoveInput -= Move;
 		UserInputs.JumpInput -= Jump;
+		UserInputs.ChargeInput -= Charge;
+	}
+
+	public void Subscribe(){
+		UserInputs.MoveInput += Move;
+		UserInputs.JumpInput += Jump;
+		UserInputs.ChargeInput += Charge;
 	}
 }
 	

@@ -18,12 +18,17 @@ public class GameStateController : MonoBehaviour {
 	public static GameObject title;
 	public GameObject titleNoStatic;
 
+	public static PlayerMove movement;
+	public PlayerMove movementNoStatic;
+
+
 	void Start (){
 		player = playerNoStatic;
 		coins = coinsNoStatic;
 		powerUps = powerUpsNoStatic;
 		widgets = widgetsNoStatic;
 		title = titleNoStatic;
+		movement = movementNoStatic;
 	}
 
 	public static void ChangeState (GameStates.States state){
@@ -32,13 +37,24 @@ public class GameStateController : MonoBehaviour {
 		switch (GameStates.currentState) {
 		case GameStates.States.OpenMenu:
 			print ("Opening Menu");
-			player.SetActive (false);
+//			player.SetActive (true);
+//			widgets.SetActive (false);
+//			title.SetActive (true);
+//			coins.SetActive (true);
+//			powerUps.SetActive (true);
+//			movement.enabled = false;
 			break;
 		case GameStates.States.CloseMenu:
 			print ("Closing Menu");
+//			title.SetActive (false);
 			break;
 		case GameStates.States.StartGame:
 			print ("Starting Game");
+//			player.SetActive (true);
+//			widgets.SetActive (true);
+//			coins.SetActive (true);
+//			powerUps.SetActive (true);
+//			movement.enabled = true;
 			break;
 		} 
 	}

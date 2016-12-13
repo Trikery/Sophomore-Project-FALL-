@@ -8,7 +8,7 @@ public class Coin : MonoBehaviour {
 
 	public float rotateSpeed = 10f;
 
-	public void OnEnable(){
+	void OnEnable(){
 		StartCoroutine (Spin ());
 		list = GetComponentInParent<CoinsList> ();
 	}
