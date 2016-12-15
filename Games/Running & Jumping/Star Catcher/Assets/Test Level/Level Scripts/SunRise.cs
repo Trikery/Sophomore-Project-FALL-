@@ -10,11 +10,19 @@ public class SunRise : MonoBehaviour {
 	public SpriteRenderer vignette;
 	public CharacterMovement character;
 
+	public Animator anim;
+	public GameObject winnerImage;
+
+	public AudioSource source;
+
 	public float t = 1f;
 
 	IEnumerator DayTimer (){
 		while (StaticPointSystem.gameTimer > 0) {
 			StaticPointSystem.gameTimer--;
+			if (StaticPointSystem.gameTimer == 3) {
+				anim.Play ("sunrising");
+			}
 			yield return new WaitForSeconds (1);
 		}
 	}
@@ -35,6 +43,8 @@ public class SunRise : MonoBehaviour {
 		} else { 
 			character.Unsubscribe ();
 			restart.RestartScreen ();
+			source.Play ();
+			winnerImage.SetActive (true);
 		}
 	}
 }
