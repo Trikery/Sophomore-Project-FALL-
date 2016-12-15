@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Agent : MonoBehaviour {
 
-	private NavMeshAgent myAgent;
+	public NavMeshAgent myAgent;
 	public Transform player;
 
 	void Start (){

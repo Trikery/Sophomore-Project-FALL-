@@ -13,7 +13,19 @@ public class EnemyMovement : MonoBehaviour {
 	public float speed = 5;
 	public float gravity = 10;
 	public float jumpPower = 5;
+
+	public AudioSource source;
+	public AudioClip[] wolfSteps;
+	public float stepRate;
+	bool canStep = true;
 	 
+	IEnumerator FootStepSounds(){
+		source.clip = wolfSteps[Random.Range(0, wolfSteps.Length)];
+		source.Play ();
+		yield return new WaitForSeconds(stepRate);
+		canStep = true;
+	}
+
 	void WolfFlipper (){
 		if (target.transform.position.x < wolf.transform.position.x && canFlipWolf) {
 			wolf.Rotate (0, 180, 0);
@@ -35,6 +47,13 @@ public class EnemyMovement : MonoBehaviour {
 
 	void OnCollisionEnter (){
 		wolfAnim.Play ("WolfJumpLand");
+	}
+
+	void OnCollisionStay(){
+		if (canStep) {
+			canStep = false;
+			StartCoroutine (FootStepSounds ());
+		}
 	}
 
 }

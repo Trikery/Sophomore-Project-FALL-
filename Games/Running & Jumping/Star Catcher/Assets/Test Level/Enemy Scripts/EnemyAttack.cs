@@ -12,6 +12,10 @@ public class EnemyAttack : MonoBehaviour {
 	public SpriteRenderer sprite;
 	public StarBoostText textEffect;
 
+	public AudioClip tumbleHit;
+	public AudioClip wolfHit;
+	public AudioSource source;
+
 	IEnumerator flashRed(){
 		sprite.color = Color.HSVToRGB (0, .5f, .9f);
 		yield return new WaitForSeconds (.25f);
@@ -45,11 +49,7 @@ public class EnemyAttack : MonoBehaviour {
 
 	void OnTriggerEnter(){
 		if (canBeDamaged) {
-			if (StaticPointSystem.starCount <= 0) {
-				print ("you're Dead!");
-			}
 
-			//print("Rabbit Damage");
 			playerAnim.Play ("RabbitDamage");
 			if (StaticPointSystem.starCount >= 0) {
 				StaticPointSystem.starCount -= damage;
@@ -58,7 +58,17 @@ public class EnemyAttack : MonoBehaviour {
 					StaticPointSystem.starCount = 0;
 				}
 			}
-
+			switch (damage) {
+			case 1:
+				source.clip = tumbleHit;
+				break;
+			case 5:
+				source.clip = wolfHit;
+				break;
+			default:
+				break;
+			}
+			source.Play ();
 			StartCoroutine (DamagePlayer ());
 				
 		}

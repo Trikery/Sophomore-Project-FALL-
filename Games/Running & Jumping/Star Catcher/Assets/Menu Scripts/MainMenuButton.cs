@@ -10,7 +10,7 @@ public class MainMenuButton : MonoBehaviour {
 		StageRecycleVars.distance = 14;
 		StaticPointSystem.gameTimer = 125;
 		StaticPointSystem.starCount = 0;
-		StaticPointSystem.timer = 90;
+		StaticPointSystem.timer = StaticPointSystem.maxtimer;
 		SceneManager.LoadScene ("TestStage", LoadSceneMode.Single);
 	}
 

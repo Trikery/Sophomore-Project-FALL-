@@ -4,7 +4,7 @@ using System.Collections;
 public class StarControl : MonoBehaviour {
 
 
-	public float endTime = 2;
+	public float endTime = 2.3f;
 
 	public float forceDuration = 0.1f;
 	private bool canAddForce = true;
@@ -16,12 +16,14 @@ public class StarControl : MonoBehaviour {
 
 	public StarBoostText textEffect;
 	public ParticleSystem particles;
+	public GameObject starBreakSound;
 
 	public AudioClip audioStart;
 	public AudioClip audioCollide;
 	public AudioClip audioCollect;
 
 	public AudioSource sound;
+	Vector3 soundpile = new Vector3 (0, 0, 0);
 
 	void Start ()
 	{
@@ -51,7 +53,7 @@ public class StarControl : MonoBehaviour {
 	 	textEffect.StarBoost ("+1", Color.white);
 
 	}
-
+		
 	void OnCollisionEnter () 
 	{
 		sound.clip = audioCollide;
@@ -60,6 +62,12 @@ public class StarControl : MonoBehaviour {
 		canAddForce = false;
 		particles.maxParticles = 5;
 		Destroy (gameObject, endTime);  // adding a second parameter would allow for a delay on impact
-		//print ("destroyed a star");
+
 	}
+
+	void OnDestroy(){
+		Instantiate (starBreakSound, soundpile, Quaternion.identity);
+		print ("destroyed a star");
+	}
+		
 }

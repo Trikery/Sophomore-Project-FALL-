@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour {
 	public GameObject countDown;
 	public CharacterMovement controls;
 	public SunRise skyTimer;
+	public GameObject tumbleweedSpawnerObject;
 
 	public GameObject playButton;
 	public GameObject quitButton;
@@ -30,6 +31,7 @@ public class MainMenu : MonoBehaviour {
 		countDown.SetActive (false);
 		controls.enabled = false;
 		skyTimer.enabled = false;
+		tumbleweedSpawnerObject.SetActive (false);
 
 		if (StaticPointSystem.canRestartGame) {
 			startButton.ActivateCount ();

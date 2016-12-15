@@ -36,6 +36,7 @@ public class CountDown : MonoBehaviour {
 		main.starSpawners.SetActive (true);
 		main.cameraMovement.enabled = true;
 		main.skyTimer.enabled = true;
+		main.tumbleweedSpawnerObject.SetActive (true);
 		this.gameObject.SetActive (false);
 
 	}

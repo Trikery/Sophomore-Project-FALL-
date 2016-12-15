@@ -11,12 +11,29 @@ public class CharacterFalls : MonoBehaviour {
 	public Animator anim;
 	public CharacterMovement move;
 
+	public AudioSource levelAudio;
+	public AudioSource deathJingle;
+	public float fadeRate = 0.01f;
+
 //	public EventSystem buttonSystem;
 //	public GameObject restartButton;
 
+	public IEnumerator FadeOutSound (AudioSource source){
+		while (source.volume > 0) {
+			source.volume -= fadeRate;
+			yield return new WaitForEndOfFrame ();
+		}
+		source.Stop ();
+	}
+
+
 	public void RestartScreen () {
+		StartCoroutine (FadeOutSound (levelAudio));
 		character.SetActive (false);
 		main.cameraMovement.enabled = false;
+		main.starSpawners.SetActive (false);
+		main.tumbleweedSpawnerObject.SetActive (false);
+		main.skyTimer.enabled = false;
 		widgets.SetActive (false);
 		gameOver.SetActive (true);
 		GameStates.currentGameState = GameStates.States.RestartScreen;
@@ -38,8 +55,9 @@ public class CharacterFalls : MonoBehaviour {
 
 		move.Unsubscribe ();
 		anim.Play ("RabbitDamage");
+		deathJingle.Play ();
+		StartCoroutine (FadeOutSound (levelAudio));
 		StartCoroutine (DeathTimerMain(20));
-
 	}
 
 

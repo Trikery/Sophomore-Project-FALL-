@@ -11,6 +11,8 @@ public class TumbleweedSpawner : MonoBehaviour {
 	public Transform tumbleweed;
 	public Transform spawnPoint;
 
+	public AudioSource audio;
+
 	// Use this for initialization
 	void Start () {
 		StartCoroutine(WaitForTumble ());
@@ -20,6 +22,7 @@ public class TumbleweedSpawner : MonoBehaviour {
 	IEnumerator WaitForTumble()
 	{
 		int randomTime = Random.Range(timeMin, timeMax); 
+		audio.Play ();
 		Instantiate (tumbleweed, spawnPoint.position, Quaternion.identity);
 		while (randomTime > 0) {
 			randomTime--;

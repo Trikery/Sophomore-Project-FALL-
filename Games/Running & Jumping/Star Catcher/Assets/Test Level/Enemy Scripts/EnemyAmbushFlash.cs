@@ -4,12 +4,17 @@ using System.Collections;
 public class EnemyAmbushFlash : MonoBehaviour
 {
 	public GameObject flashCanvas;
+	public AudioSource source;
 
 	public int maxframecount = 30;
 
+	void Start(){
+		source = GetComponent<AudioSource> ();
+	}
 
 	public void StartFlash()
 	{
+		source.Play();
 		flashCanvas.SetActive (true);
 	}
 

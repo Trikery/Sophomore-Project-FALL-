@@ -16,6 +16,28 @@ public class CharacterMovement : MonoBehaviour {
 	public 	int 	jumpCount = 2;
 	public 	int 	jumpMax = 2;
 
+	public AudioClip footSteps;
+	public AudioClip rabbitJumpSound;
+	public AudioSource source;
+	public float stepRate;
+	public float pitchMin = 0.5f;
+	public float pitchMax = 1.5f;
+	bool canStep = true;
+
+	IEnumerator FootStepSounds(){
+		source.clip = footSteps;
+		source.pitch = Random.Range (pitchMin, pitchMax);
+		source.Play ();
+		yield return new WaitForSeconds(stepRate);
+		canStep = true;
+	}
+
+	void JumpSound (){
+		source.clip = rabbitJumpSound;
+		source.PlayOneShot (rabbitJumpSound);
+
+	}
+
 	void Start (){
 		character = GetComponent<CharacterController> ();  //get access to the CharacterController Component on this object
 		UserInputs.MoveInput += Move;
@@ -42,6 +64,11 @@ public class CharacterMovement : MonoBehaviour {
 			moveVector.y = 0;
 			jumpCount = jumpMax;
 		}
+
+		if (character.isGrounded && character.velocity.magnitude > 0.3 && canStep) {
+			canStep = false;
+			StartCoroutine (FootStepSounds ());
+		}
 	}
 
 	void Jump (KeyCode _keycode)
@@ -54,9 +81,11 @@ public class CharacterMovement : MonoBehaviour {
 			if (jumpCount <= jumpMax-1)
 				anim.Play ("RabbitJumping");
 			moveVector.y = jumpPower;
+			JumpSound ();
 			jumpCount --;
 		}
 	}
+
 	public void Unsubscribe(){
 		UserInputs.MoveInput -= Move;
 		UserInputs.JumpInput -= Jump;
