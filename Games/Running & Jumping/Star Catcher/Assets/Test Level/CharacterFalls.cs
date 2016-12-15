@@ -6,6 +6,7 @@ public class CharacterFalls : MonoBehaviour {
 
 	public MainMenu main;
 	public GameObject character;
+	public GameObject enemy;
 	public GameObject gameOver;
 	public GameObject widgets;
 	public Animator anim;
@@ -34,6 +35,7 @@ public class CharacterFalls : MonoBehaviour {
 		main.starSpawners.SetActive (false);
 		main.tumbleweedSpawnerObject.SetActive (false);
 		main.skyTimer.enabled = false;
+		enemy.SetActive (false);
 		widgets.SetActive (false);
 		gameOver.SetActive (true);
 		GameStates.currentGameState = GameStates.States.RestartScreen;
